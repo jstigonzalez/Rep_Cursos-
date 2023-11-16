@@ -1,5 +1,7 @@
 package co.edu.poli.RegistroCursos.model;
 
+import java.io.Serializable;
+
 /**
  * La clase abstracta Curso_Main es la superclase para los cursos y proporciona
  * metodos y atributos comunes para todos los cursos.
@@ -7,7 +9,7 @@ package co.edu.poli.RegistroCursos.model;
  * @since 5/10/2023
  */
 
-public abstract class Curso_Main implements Funcion {
+public abstract class Curso_Main implements Funcion, Serializable {
 
     // Atributos
     private int id;         // El identificador unico del curso.

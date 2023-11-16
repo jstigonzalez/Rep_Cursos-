@@ -13,10 +13,13 @@ public class Operacion {
      * Constructor de la clase Operacion. Inicializa el arreglo de cursos con un tamaño predeterminado.
      */
     public Operacion() {
-        cursos = new Curso_Main[2]; // Inicializa el arreglo de cursos con capacidad para 2 cursos.
+        cursos = new Curso_Main[5]; // Inicializa el arreglo de cursos con capacidad para 2 cursos.
     }
+    
 
-    /**
+    
+
+	/**
      * Crea un nuevo curso y lo agrega al arreglo de cursos.
      *
      * @param cursito El curso que se va a agregar.
@@ -45,17 +48,16 @@ public class Operacion {
      * @return true si se pudo eliminar el curso, false si no se encontro el curso con el ID especificado.
      */
     public boolean eliminar(int id) {
-
-        for (int i = 0; i < cursos.length; i++) {
-            if (cursos[i].getId() == id) {
-                for (int j = i; j < cursos.length - 1; j++) {
-                    cursos[j] = cursos[j + 1];
-                }
-                cursos[cursos.length - 1] = null;
-                return true;
+    	 for (int i = 0; i < cursos.length; i++) {
+        if (cursos[i] != null && cursos[i].getId() == id) {
+            for (int j = i; j < cursos.length - 1; j++) {
+            	cursos[j] = cursos[j + 1];
             }
+            cursos[cursos.length - 1] = null;
+            return true;
         }
-        return false;
+    }
+    return false;
     }
 
     /**
@@ -80,11 +82,18 @@ public class Operacion {
      * @param nuevoCurso El nuevo curso que reemplazara al curso existente.
      */
     public void actualizar(int id, Curso_Main nuevoCurso) {
-        for (int i = 0; i < cursos.length; i++) {
-            if (cursos[i].getId() == id) {
-                cursos[i] = nuevoCurso;
+    	for (int i = 0; i < cursos.length; i++) {
+            if (cursos[i] != null && cursos[i].getId() == id) {
+            	cursos[i] = nuevoCurso;
                 break;
             }
         }
+    }
+    public String readall () {
+        String s="";
+        for (int i = 0; i < cursos.length; i++) {
+            s+=cursos[i]+"\n";
+        }
+        return s;
     }
 }

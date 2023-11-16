@@ -1,12 +1,15 @@
 
 package co.edu.poli.RegistroCursos.model;
+
+import java.io.Serializable;
+
 /**
  * La clase Curso extiende de Curso_Main y representa un curso especifico
  * con un grupo de instructores y un conjunto de estudiantes inscritos.
  * @author Johan Stiven Gonzalez
  * @since 5/10/2023
  */
-public class Curso extends Curso_Main {
+public class Curso extends Curso_Main implements Serializable {
 
     // Atributos
     private Instructor[] instructor;   // Arreglo de instructores asignados al curso.

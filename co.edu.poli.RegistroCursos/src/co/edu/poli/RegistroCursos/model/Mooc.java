@@ -1,11 +1,14 @@
 package co.edu.poli.RegistroCursos.model;
+
+import java.io.Serializable;
+
 /**
  * La clase Mooc extiende de Curso_Main e implementa la interfaz Certificado.
  * Representa un curso en línea con una cantidad de videos.
  * author Johan Stiven Gonzalez
  * @since 5/10/2023
  */
-public class Mooc extends Curso_Main implements Certificado {
+public class Mooc extends Curso_Main implements Certificado, Serializable {
 
     // Atributos
     private int cantidad_de_videos; // La cantidad de videos del curso MOOC.
